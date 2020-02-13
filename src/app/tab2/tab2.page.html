@@ -1,17 +1,27 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  color="danger">
     <ion-title>
-      Tab 2
+      Post A New Message
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content color="white">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card>
+    
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Your Message</ion-label>
+          <ion-input></ion-input>
+          <ion-tab-button (click)="sendMessage()">
+            <ion-icon name="arrow-up-circle-outline" color="primary" ></ion-icon>
+            <ion-label>Send</ion-label>
+          </ion-tab-button>
+        </ion-item>
+       
+        
+      </ion-card-content>
+    
+  </ion-card>
 </ion-content>

@@ -1,17 +1,51 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar  color="danger">
+      <ion-title>Feed</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-content fullscreen>
+    <ion-list-header>Porky Minch</ion-list-header>
+    <ion-avatar class="ion-margin-start">
+      <img src="https://vignette.wikia.nocookie.net/nintendo/images/f/fd/Pokey_Minch_Earthbound.png/revision/latest?cb=20070828021948&path-prefix=en">
+    </ion-avatar>
+
+    <ion-list-header>Ness</ion-list-header>
+    <ion-chip class="ion-margin-start">
+      <ion-avatar>
+        <img src="data:image/jpeg;base64,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">
+      </ion-avatar>
+      <ion-label>Annoying Neighbor</ion-label>
+    </ion-chip>
+
+    <ion-list>
+      <ion-list-header>Messages</ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-icon name="arrow-redo-sharp" color="tertiary"></ion-icon>
+        </ion-avatar>
+        <ion-label class="text1">Hope you enjoyed the gift I sent you.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-icon name="arrow-redo-sharp" color="tertiary"></ion-icon>
+        </ion-avatar>
+        <ion-label class="text1">
+          <h3>HAHAHAHAHA</h3>
+          <p class="text1">Bye, loser!</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="end">
+          <ion-icon name="arrow-undo-sharp" color="success"></ion-icon>
+        </ion-avatar>
+        <ion-label class="text">
+          <h3>You attacked us!</h3>
+          <p>When we find you...</p>
+          <p>Porky! You will regret you ever moved next door.</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-app>
