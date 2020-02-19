@@ -15,3 +15,23 @@ p {
   color: #5260ff;
 }
 
+ion-card-title {
+  font-size: 14px;
+  color: #1d5d7a;
+  
+}
+
+ion-card-subtitle {
+  font-size: 16px;
+  margin-top: 10px; 
+  color: #333;
+  text-transform: capitalize;
+}
+
+ion-card-header {
+  background-color: #f9f9f98e;
+}
+
+ion-card-content {
+  border-bottom: 1px solid #9e3414b9;
+}

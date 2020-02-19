@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar  color="danger">
+  <ion-toolbar color="danger">
     <ion-title>
       Post A New Message
     </ion-title>
@@ -9,19 +9,33 @@
 <ion-content color="white">
 
   <ion-card>
-    
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="stacked">Your Message</ion-label>
-          <ion-input></ion-input>
-          <ion-tab-button (click)="sendMessage()">
-            <ion-icon name="arrow-up-circle-outline" color="primary" ></ion-icon>
-            <ion-label>Send</ion-label>
-          </ion-tab-button>
-        </ion-item>
-       
-        
-      </ion-card-content>
-    
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Your Message</ion-label>
+        <ion-input [(ngModel)]="post.text"></ion-input>
+        <ion-tab-button (click)="sendMessage()">
+          <ion-icon name="arrow-up-circle-outline" color="primary"></ion-icon>
+          <ion-label>Send</ion-label>
+        </ion-tab-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Image URL:</ion-label>
+        <ion-input [(ngModel)]="post.imageUrl"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">To:</ion-label>
+        <ion-select [(ngModel)]="post.to">
+          <ion-select-option value="Everyone">Everyone</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+     
+
+      
+    </ion-card-content>
+
   </ion-card>
 </ion-content>
