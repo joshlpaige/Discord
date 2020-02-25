@@ -1,6 +1,9 @@
+import { ShareService } from './../services/share.service';
 import { DataService } from './../services/data.service';
 import { Component } from '@angular/core';
 import { Message } from '../models/message';
+import { share } from 'rxjs/operators';
+import { Friend } from '../models/friend';
 
 @Component({
   selector: 'app-tab1',
@@ -9,14 +12,28 @@ import { Message } from '../models/message';
 })
 export class Tab1Page {
   
-  allMessages : Message[] = [];
+  myFriends: Friend[] = [];
+  allMessages: Message[] = [];
+  friendFilter = "Everyone";
 
-  constructor(private data : DataService) {
+  constructor(private data : DataService, public shared: ShareService) {
     // get data
     data.getAllMessage().subscribe(list => {
       console.log("messages", list);
-      this.allMessages = list;
+      this.allMessages = list.filter(m => m.to == "Everyone" 
+        || m.to == shared.userName 
+        || m.from == shared.userName);
+    });
+
+    data.getAllFriends().subscribe(list => {
+      this.myFriends = list.filter(f => f.belongsTo == shared.userName);
     });
   }
 
+  getMessagesToDisplay(){
+    if(this.friendFilter == "Everyone") return this.allMessages;
+
+    return this.allMessages.filter(m => m.from == this.friendFilter 
+      || ( m.from == this.shared.userName && m.to == this.friendFilter ) );
+  }
 }

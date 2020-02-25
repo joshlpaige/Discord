@@ -35,3 +35,16 @@ ion-card-header {
 ion-card-content {
   border-bottom: 1px solid #9e3414b9;
 }
+
+.my-message {
+  background-color: #2b6bca8e;
+
+    ion-card-header,
+    ion-card-content {
+      background-color: #dce9fa8e;
+    }
+
+    ion-card-title{
+      text-align: right;
+    }
+}

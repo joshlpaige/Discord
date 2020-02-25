@@ -1,6 +1,15 @@
 <ion-header translucent>
   <ion-toolbar color="danger">
     <ion-title>Feed</ion-title>
+    <ion-buttons slot="primary">
+      <ion-icon name="funnel-outline"></ion-icon>
+      <ion-select [(ngModel)]="friendFilter" name="friendFilter">
+        <ion-select-option value="Everyone">Everyone</ion-select-option>
+        <ion-select-option *ngFor="let friend of myFriends">{{friend.name}}</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+
+
   </ion-toolbar>
 </ion-header>
 
@@ -22,7 +31,7 @@
 
 
 <ion-content>
-  <ion-card *ngFor="let message of allMessages">
+  <ion-card *ngFor="let message of getMessagesToDisplay()" [class.my-message]="message.from == shared.userName">
     
     <ion-card-content *ngIf="message.imageUrl">
       <img src="{{ message.imageUrl }}" alt="">
@@ -32,6 +41,7 @@
       <ion-card-title>{{ message.from }}</ion-card-title>
       <ion-card-subtitle>{{ message.text }}</ion-card-subtitle>
     </ion-card-header>
+    
   </ion-card>
 </ion-content>
 

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ShareService {
 
-  public userName: string  = "Josh Paige";
+  public userName: string  = "Josh";
 
   constructor() { }
 }
