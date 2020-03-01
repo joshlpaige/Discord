@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar color="danger">
+    <ion-avatar class="ion-margin-start">
+      <img src="https://pbs.twimg.com/profile_images/968959598181961728/KWj2QsDB_400x400.jpg">
+    </ion-avatar>
     <ion-title>
-      Manage Friends
+      Contact List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,12 +18,14 @@
         <ion-input [(ngModel)]="model.name"></ion-input>
       </ion-item>
 
-      <ion-button (click)="saveFriend()" color="danger" expand="block">Add Friend</ion-button>
+      <br>
+
+      <ion-button (click)="saveFriend()" color="danger">Add Friend</ion-button>
     </ion-card-content>
   </ion-card>
 
   <ion-list>
-    <ion-item *ngFor="let friend of myFriends"><ion-icon name="person-circle-outline"></ion-icon>{{friend.name}}</ion-item>
+    <ion-item class="friends" *ngFor="let friend of myFriends"><ion-icon name="person-circle-outline"></ion-icon>{{friend.name}}</ion-item>
   </ion-list>
 
 </ion-content>
